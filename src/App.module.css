@@ -9,7 +9,8 @@
 .newTask,
 .info,
 .tasksList,
-.list {
+.list,
+.empty {
   display: flex;
   align-items: center;
   width: 100%;
@@ -44,4 +45,24 @@
   flex-direction: column;
   width: 100%;
   gap: 0.75rem;
+}
+
+.empty {
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+.empty span,
+.empty p {
+  color: var(--gray-300);
+}
+
+hr {
+  border-top: 1px solid var(--gray-300);
+  width: 100%;
+}
+
+.empty span {
+  font-weight: bold;
+  margin-top: 1rem;
 }

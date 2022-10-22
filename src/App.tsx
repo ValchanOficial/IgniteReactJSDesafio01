@@ -1,5 +1,6 @@
 import { PlusCircle } from 'phosphor-react';
 import { useEffect, useState } from 'react';
+import empty from 'src/assets/Empty.svg';
 import { Header } from 'src/components/Header';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './App.module.css';
@@ -43,16 +44,30 @@ function App() {
               Concluídas:
             </Counter>
           </div>
-          <ul className={styles.list}>
-            {tasks.map(task => (
-              <Task
-                key={task.id}
-                {...task}
-                tasks={tasks}
-                setTasks={setTasks}
-              />
-            ))}
-          </ul>
+          {
+            tasks.length === 0 ? (
+              <>
+                <hr />
+                <div className={styles.empty}>
+                  <img src={empty} />
+                  <span>Você ainda não tem tarefas cadastradas</span>
+                  <p>Crie tarefas e organize seus itens a fazer</p>
+                </div>
+              </>
+            ) : (
+
+              <ul className={styles.list}>
+                {tasks.map(task => (
+                  <Task
+                    key={task.id}
+                    {...task}
+                    tasks={tasks}
+                    setTasks={setTasks}
+                  />
+                ))}
+              </ul>
+            )
+          }
         </div>
       </section>
 
