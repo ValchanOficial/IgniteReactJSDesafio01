@@ -1,0 +1,20 @@
+.counter {
+  font-weight: bold;
+}
+
+.counter > span {
+  margin-left: 1rem;
+  background: var(--gray-400);
+  color: var(--white);
+  border-radius: 0.5rem;
+  padding: 2px 0.5rem;
+  font-weight: normal;
+}
+
+.primary {
+  color: var(--blue);
+}
+
+.secondary {
+  color: var(--purple);
+}
